@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pinewood Derby 2023</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../stylesheets/main.css">
+    <link rel="stylesheet" href="../stylesheets/control.css">
+    <script type="text/javascript" src="../scripts/main.js"></script>
+    <script type="text/javascript" src="../scripts/control.js" defer></script>
+
+    <link rel="icon" href="data:,"> <!-- Stop the browser from asking for favicon -->
+</head>
+
+<body>
+    <div class="header">
+        <p>Pinewood Derby 2023 - Control Panel</p>
+    </div>
+
+    <div class="container">
+        <h1>Race Data</h1>
+        <p id="racer_now">Now Racing: N/A vs. N/A</p>
+        <p id="racer_next">Up Next: N/A vs. N/A</p>
+        <p id="races_left_in_round">Races Left in Round: 0</p>
+        <p id="players_left">Players Left: 0</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <!-- <th>Run No.</th> -->
+                    <th>Racer 1</th>
+                    <th>Racer 2</th>
+                    <th>Remove Run</th>
+                </tr>
+            </thead>
+            <tbody id="raceDataTable"></tbody>
+        </table>
+        <br>
+        <div class="buttonSeries">
+            <button class="standardButton inline" onclick="updateRaceData();">Update Race Data</button>
+            <button class="standardButton inline" onclick="fetchRaceData();">Refresh</button>
+            <button class="standardButton inline" onclick="addRunToRaceTable(0, 0);">Add Run</button>
+        </div>
+
+        <hr><br>
+
+        <h1>Race Management</h1>
+        <br>
+        <div class="buttonSeries">
+            <button class="standardButton inline" onclick="nextRound();">Next Round</button>
+            <button class="standardButton inline" onclick="nextRace();">Next Race</button>
+        </div>
+        <br>
+        <div class="buttonSeries">
+            <button id="markStartReadyButton" class="standardButton inline" onclick="markStartReady();">Mark Start Ready</button>
+            <button class="standardButton inline" onclick="manuallyStartMotor(false);">Manually Start Motor</button>
+            <button class="standardButton inline" onclick="manuallyStartMotor(true);">Manually Start Motor
+                (Silent)</button>
+        </div>
+        <br>
+        <input type="checkbox" id="autoShowTimerOnFinish" class="checkbox" onchange="editIgnoreIncomingDataFromTimer(this.checked);">
+        <label for="autoShowTimerOnFinish" class="checkbox">Ignore Incoming Data From Timer (AKA let people use the timer without running a tourney)</label>
+
+        <br>
+
+        <h3 class="buttonSeriesLabel">Finish Controls</h3>
+        <div class="buttonSeries">
+            <button class="standardButton inline" onclick="markLaneFinish(1);">Mark Left Finish</button>
+            <button class="standardButton inline" onclick="markLaneFail(1);">Mark Left Fail</button>
+            <button class="standardButton inline" onclick="markLaneFinish(2);">Mark Right Finish</button>
+            <button class="standardButton inline" onclick="markLaneFail(2);">Mark Right Fail</button>
+        </div>
+
+        <br><br>
+
+        <input type="checkbox" id="autoShowTimerOnFinish" class="checkbox" checked>
+        <label for="autoShowTimerOnFinish" class="checkbox">Auto Update Displays</label>
+        <div class="gridContainer">
+            <div class="inputButtonCombo">
+                <h3>Set Left Lane Position</h3>
+                <input id="leftLanePosition" class="textbox noSpin" type="number" pattern="\d">
+                <button class="standardButton inline textboxButton" onclick="setLanePosition(1, this);">Submit</button>
+            </div>
+            <div class="inputButtonCombo">
+                <h3>Set Right Lane Position</h3>
+                <input id="rightLanePosition" class="textbox noSpin" type="number" pattern="\d">
+                <button class="standardButton inline textboxButton" onclick="setLanePosition(2, this);">Submit</button>
+            </div>
+            <div class="inputButtonCombo">
+                <h3>Set Left Lane Run Time</h3>
+                <input id="leftLaneRunTime" class="textbox noSpin" type="number" pattern="[\d.]*">
+                <button class="standardButton inline textboxButton" onclick="setLaneRunTime(1, this);">Submit</button>
+            </div>
+            <div class="inputButtonCombo">
+                <h3>Set Right Lane Run Time</h3>
+                <input id="rightLaneRunTime" class="textbox noSpin" type="number" pattern="[\d.]*">
+                <button class="standardButton inline textboxButton" onclick="setLaneRunTime(2, this);">Submit</button>
+            </div>
+        </div>
+
+        <h3 class="buttonSeriesLabel">Display Visibility</h3>
+        <input type="checkbox" id="autoShowTimerOnFinish" class="checkbox" checked onchange="editShowTimeOnFinish(this.checked);">
+        <label for="autoShowTimerOnFinish" class="checkbox">Show Time On Finish</label>
+
+        <div class="buttonSeries">
+            <button class="standardButton inline" onclick="editLanePositionVisibility(1, true);">Show Left Position</button>
+            <button class="standardButton inline" onclick="editLaneRunTimeVisibility(1, true);">Show Left Time</button>
+            <button class="standardButton inline" onclick="editLanePositionVisibility(2, true);">Show Right Position</button>
+            <button class="standardButton inline" onclick="editLaneRunTimeVisibility(2, true);">Show Right Time</button>
+        </div>
+        <br>
+        <div class="buttonSeries">
+            <button class="standardButton inline" onclick="editLanePositionVisibility(1, false);">Hide Left Position</button>
+            <button class="standardButton inline" onclick="editLaneRunTimeVisibility(1, false);">Hide Left Time</button>
+            <button class="standardButton inline" onclick="editLanePositionVisibility(2, false);">Hide Right Position</button>
+            <button class="standardButton inline" onclick="editLaneRunTimeVisibility(2, false);">Hide Right Time</button>
+        </div>
+
+        <br>
+        <hr><br>
+
+        <h1>OBS Controls</h1>
+        <br>
+        <div class="buttonSeries">
+            <button class="standardButton inline" onclick="obsControls.startRecording();">Start Recording</button>
+            <button class="standardButton inline" onclick="obsControls.stopRecording();">Stop Recording</button>
+            <button class="standardButton inline" onclick="obsControls.toggleRecording();">Toggle Recording</button>
+        </div>
+        <input type="checkbox" id="autoHandleRecording" class="checkbox" checked onchange="obsControls.editAutoHandleRecording(this.checked);">
+        <label for="autoHandleRecording" class="checkbox">Auto Handle Recording (start after motor spin, stop when both lanes trigger)</label>
+
+        <h3 class="buttonSeriesLabel">Scene Selection</h3>
+        <div class="buttonSeries">
+            <button class="standardButton inline" onclick="obsControls.setScene('blank');">Blank</button>
+            <button class="standardButton inline" onclick="obsControls.setScene('fullscreen');">Fullscreen</button>
+            <button class="standardButton inline" onclick="obsControls.setScene('basic_camera');">Basic Camera</button>
+            <button class="standardButton inline" onclick="obsControls.setScene('advanced_camera');">Advanced Camera</button>
+            <button class="standardButton inline" onclick="obsControls.setScene('video_playback');">Video Playback</button>
+            <button class="standardButton inline" onclick="obsControls.setScene('round_complete');">Round Complete</button>
+            <button class="standardButton inline" onclick="obsControls.setScene('custom_text');">Custom Text</button>
+        </div>
+
+        <h3 class="buttonSeriesLabel">Video Player Management</h3>
+        <div class="buttonSeries">
+            <button class="standardButton inline" onclick="videoPlayer.loadLatestVideo();">Load Latest Video</button>
+            <button class="standardButton inline" onclick="videoPlayer.togglePlayback();">Toggle Playback</button>
+            <button class="standardButton inline" onclick="videoPlayer.stopVideo();">Stop Video</button>
+            <button class="standardButton inline" onclick="videoPlayer.slowdownVideo();">Slowdown Video</button>
+            <button class="standardButton inline" onclick="videoPlayer.nextFrame();">Next Frame</button>
+            <button class="standardButton inline" onclick="videoPlayer.bringToForeground();">Bring to Foreground</button>
+        </div>
+
+        <h3 class="buttonSeriesLabel">Miscellaneous</h3>
+        <div class="buttonSeries">
+            <button class="standardButton inline" onclick="roundCompleteAnimation.play();">Play Round Complete Animation</button>
+            <button class="standardButton inline" onclick="roundCompleteAnimation.skip();">Skip Round Complete Animation</button>
+        </div>
+
+        <br><br>
+
+        <p class="smallText">Set Custom Text Card:</p>
+        <div class="textareaButtonCombo">
+            <textarea id="customTextInput" placeholder="Technical errors. Please hold."></textarea>
+            <button class="standardButton textboxButton" onclick="obsControls.setCustomTextCard();">Submit</button>
+        </div>
+
+        <br>
+        <hr><br>
+
+        <h1>Miscellaneous</h1>
+        <br>
+        <p class="smallText">Alert Emcee:</p>
+        <div class="textareaButtonCombo">
+            <textarea id="alertEmceeInput" placeholder="Final rounds approaching. Please announce."></textarea>
+            <button class="standardButton textboxButton" onclick="alertEmcee();">Submit</button>
+        </div>
+        <br>
+
+        <div class="buttonSeries">
+            <button class="standardButton inline" onclick="blinkBoard('timer');">Blink Timer Board</button>
+            <button class="standardButton inline" onclick="blinkBoard('motor');">Blink Motor Board</button>
+        </div>
+        <br>
+        <div class="buttonSeries">
+            <button class="standardButton inline" onclick="videoPlayer.forceClose();">Force Close Video Player</button>
+            <button class="standardButton inline" onclick="videoPlayer.openNew();">Open New Video Player</button>
+        </div>
+    </div>
+
+    <script>
+        startGetRaceInfoLoop();
+        makePopup();
+    </script>
+</body>
+
+</html>

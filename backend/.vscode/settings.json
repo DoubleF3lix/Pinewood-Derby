@@ -1,0 +1,5 @@
+{
+    "python.formatting.provider": "black",
+    "explorer.autoReveal": false,
+    "editor.codeActionsOnSave": {}
+}

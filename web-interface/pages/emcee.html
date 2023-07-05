@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pinewood Derby 2023</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../stylesheets/main.css">
+    <script type="text/javascript" src="../scripts/main.js"></script>
+    <script type="text/javascript" src="../scripts/emcee.js" defer></script>
+
+    <link rel="icon" href="data:,"> <!-- Stop the browser from asking for favicon -->
+</head>
+
+<body>
+    <div class="header">
+        <p>Pinewood Derby 2023 - Emcee Panel</p>
+    </div>
+
+    <div class="centerContainer">
+        <p id="racer_now">Now Racing: N/A vs. N/A</p>
+        <p id="racer_next">Up Next: N/A vs. N/A</p>
+        <p id="races_left_in_round">Races Left in Round: 0</p>
+        <p id="players_left">Players Left: 0</p>
+
+        <button class="standardButton" id="showPopupButton" onclick="showAlertPopup();">Alert Controller</button>
+    </div>
+
+    <script>
+        startGetRaceInfoLoop();
+        makePopup();
+    </script>
+</body>
+
+</html>

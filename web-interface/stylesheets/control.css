@@ -1,0 +1,203 @@
+.container {
+    margin-top: 10%;
+    margin-left: 1%;
+}
+
+hr {
+    margin-right: 1%;
+}
+
+p {
+    text-align: left;
+}
+
+p .smallText {
+    font-size: 25px;
+}
+
+h1 {
+    font-size: 40px;
+    text-align: left;
+}
+
+h2 {
+    font-size: 35px;
+    text-align: left;
+}
+
+h3 {
+    font-size: 25px;
+    text-align: left;
+    margin-bottom: -20px;
+    margin-top: 10px;
+}
+
+.standardButton {
+    padding: 15px 30px;
+}
+
+.textboxButton {
+    font-size: 18px;
+    padding: 7px 10px;
+    background-color: gray;
+}
+
+td .textboxButton {
+    margin: 0;
+}
+
+.inputButtonCombo .textbox {
+    width: 5ch;
+}
+
+.inputButtonCombo .widerTextbox {
+    width: 20ch;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+table {
+    margin-top: 30px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 2px solid gray;
+}
+
+th, td {
+    color: #eaeaea;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+
+td {
+    text-align: center;
+}
+
+tr:nth-child(even), tr:nth-child(even) td input {
+    background-color: #1E1E1E;
+}
+
+tr:nth-child(odd), tr:nth-child(odd) td input {
+    background-color: #0d0d0d;
+}
+
+td .textbox {
+    height: 25px;
+    text-align: center;
+    width: 5ch;
+    color: white;
+    border: none;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.noSpin::-webkit-inner-spin-button, .noSpin::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}
+
+.noSpin {
+    -moz-appearance:textfield !important;
+}
+
+/* iPad Landscape */
+@media screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .container {
+        margin-top: 10%;
+        margin-left: 3%;
+    }
+    
+    hr {
+        margin-right: 3%;
+    }
+
+    .textboxButton {
+        padding: 10px 10px;
+    }
+
+    .gridContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* iPad Portrait */
+@media screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .container {
+        margin-top: 16%;
+        margin-left: 3%;
+    }
+
+    hr {
+        margin-right: 3%;
+    }
+
+    .textboxButton {
+        padding: 10px 10px;
+    }
+
+    .gridContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.buttonSeries {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.buttonSeries button {
+    margin-left: 0;
+    margin-right: 5px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.buttonSeriesLabel {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.shiftDown {
+    margin-top: 15px;
+    margin-bottom: -25px;
+    font-size: 25px;
+}
+
+.textareaButtonCombo {
+    width: 32em;
+}
+
+.textareaButtonCombo textarea {
+    height: auto;
+    padding-top: 10px;
+    height: 5em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.textareaButtonCombo .standardButton {
+    margin: 0;
+    margin-top: 2px;
+    width: 100%;
+}
+
+.checkbox {
+    margin-left: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: white;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 20px;
+    width: 20px;
+}

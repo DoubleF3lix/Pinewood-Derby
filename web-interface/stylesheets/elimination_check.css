@@ -1,0 +1,6 @@
+.standardButton:not(#popupConfirmButton) {
+    padding: 10px 20px;
+    margin: 20px auto;
+    float: right;
+    margin-top: -5px;
+}

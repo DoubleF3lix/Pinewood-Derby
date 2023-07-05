@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pinewood Derby 2023</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../stylesheets/main.css">
+    <link rel="stylesheet" href="../stylesheets/elimination_check.css">
+    <script type="text/javascript" src="../scripts/main.js"></script>
+    <script type="text/javascript" src="../scripts/elimination_check.js"></script>
+
+    <link rel="icon" href="data:,"> <!-- Stop the browser from asking for favicon -->
+</head>
+
+<body>
+    <div class="header">
+        <p>Pinewood Derby 2023 - Elimination Check Panel</p>
+    </div>
+
+    <div class="centerContainer">
+        <p>Enter your name below to see if you've been eliminated</p>
+        <br><hr><br>
+
+        <label for="nameInput" style="margin-right: 20px;">Name:</label>
+        <input type="text" id="nameInput" list="racerNames" class="textbox noSpin" style="min-width: 20ch;">
+        <datalist id="racerNames">
+        </datalist>
+
+        <button class="standardButton inline" onclick="checkElimination(document.getElementById('nameInput').value);">Submit</button>
+    </div>
+
+    <script>
+        makePopup();
+        populateRacerNames(racerNames);
+    </script>
+</body>
+
+</html>
