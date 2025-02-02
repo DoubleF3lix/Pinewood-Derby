@@ -5,7 +5,7 @@ import os
 import vlc
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-VIDEOS_DIR = "D:\\Videos"  # TODO change
+VIDEOS_DIR = "D:\\Videos"  # TODO Change
 
 
 class Player(QtWidgets.QMainWindow):

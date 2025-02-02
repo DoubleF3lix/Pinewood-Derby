@@ -1,0 +1,19 @@
+To start the event:
+
+- Enter your list of racers in backend\racer_list.txt
+- Copy this same list to web_interface\scripts\elimination_check.js, formatting it properly
+- Delete any DB files in backend, and create a new file named "INIT"
+- Start both instances of OBS
+- Start the backend by opening a terminal in backend, activating the venv, and running main.py
+- Supply power to the timer board, which will also activate the access point.
+- Connect all the emcee iPad, the controller iPad, and the laptop to this access point.
+- Supply power to the motor board
+- If necessary, use the /change-ip endpoint on both the timer board and the motor board to point them to the backend URL. See the API Spec for more info.
+- If necessary, edit the server URL at the top of web_interface\scripts\main.js
+- Start the web server by opening a terminal in web_interface and run start.bat
+- Load the Check Elimination panel on the laptop, the Emcee panel on the emcee's iPad, and the Control panel on the controller's iPad
+- Perform a quick test run of the timer board and motor panel by using the various controls
+- Start the stream
+- Press "New Round" on the Control panel when you're ready, and switch the scene to Advanced Camera
+
+If the backend crashes during the event, it should recover. If it does not, good luck.

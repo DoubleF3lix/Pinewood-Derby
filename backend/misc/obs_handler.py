@@ -5,7 +5,9 @@ from typing import Literal
 
 import obsws_python as obsws
 import obsws_python.error as obsws_errors
-from const import *
+
+# from const import *
+ENABLE_STREAMING = False
 
 
 # obs.set_current_preview_scene("Round Complete") or set_scene(obs_scene.camera)
@@ -22,10 +24,15 @@ class obs_scene:
 class OBSHandler:
     def __init__(self):
         self.connection = obsws.ReqClient(host="localhost", port=4455)
+        if ENABLE_STREAMING:
+            self.streaming_connection = obsws.ReqClient(host="localhost", port=4456)
 
         self.connection.set_studio_mode_enabled(True)
         self.connection.set_current_program_scene(obs_scene.basic_camera)
         self.connection.set_current_preview_scene(obs_scene.advanced_camera)
+
+        if ENABLE_STREAMING:
+            self.streaming_connection.set_current_program_scene(obs_scene.advanced_camera)
 
         self.is_recording: bool = False
         self.recording_file_name: str = ""
@@ -44,9 +51,11 @@ class OBSHandler:
         self.set_scene(obs_scene.custom_text)
 
     def clear_eliminated_racer_columns(self):
-        self.set_text("eliminated_racers_column_1", "")
-        self.set_text("eliminated_racers_column_2", "")
-        self.set_text("eliminated_racers_column_3", "")
+        self.set_text("eliminated_racers_column_1", "", no_streaming=True)
+        self.set_text("eliminated_racers_column_2", "", no_streaming=True)
+
+        if ENABLE_STREAMING:
+            self.set_text("eliminated_racers_scrolling", "", streaming_only=True)
 
     # Alias
     def start_recording(self) -> None:
@@ -65,14 +74,23 @@ class OBSHandler:
     def set_scene(self, scene: obs_scene) -> None:
         try:
             self.connection.set_current_preview_scene(scene)
+            
+            if ENABLE_STREAMING:
+                self.streaming_connection.set_current_program_scene(scene)
         except obsws_errors.OBSSDKError:
             print(
                 "ERROR - Internal from obs_handler.set_scene. Make sure the scene exists in OBS, and that Studio Mode is enabled"
             )
 
-    def set_text(self, text_item_name: str, text: str) -> None:
-        self.connection.set_input_settings(text_item_name, {"text": text}, True)
+    def set_text(self, text_item_name: str, text: str, no_streaming: bool = False, streaming_only: bool = False) -> None:
+        if not streaming_only:
+            self.connection.set_input_settings(text_item_name, {"text": text}, True)
+        if not no_streaming and ENABLE_STREAMING:
+            if "\n" in text:
+                text = text.replace("\n", " " * 7) + " " * 30
+            self.streaming_connection.set_input_settings(text_item_name, {"text": text}, True)
 
+    # Doesn't support Streaming
     def append_text(
         self, text_item_name: str, text: str, separator: str = "\n"
     ) -> None:
@@ -80,7 +98,7 @@ class OBSHandler:
             "text"
         ]
         new_text = old_text + separator + text
-        self.set_text(text_item_name, new_text)
+        self.set_text(text_item_name, new_text, no_streaming=True)
 
     # Alias methods
     def set_run_time(self, racer_number: Literal[1, 2], time: float) -> None:
@@ -105,8 +123,9 @@ class OBSHandler:
             "Output", "FilenameFormatting", f"{racer_names[0]} vs {racer_names[1]} %CCYY %I-%mm-%ss %p"
         )  # Automatically adds extension
 
+    # Doesn't support Streaming
     def set_up_next(self, racer_names: tuple[str, str]) -> None:
-        self.set_text("up_next", f"{racer_names[0]} vs. {racer_names[1]}")
+        self.set_text("up_next", f"{racer_names[0]} vs. {racer_names[1]}", no_streaming=True)
 
     def set_round_number(self, round_number: int) -> None:
         self.set_text("round_number", f"Round {round_number}")
@@ -121,17 +140,20 @@ class OBSHandler:
     ) -> None:
         self.clear_eliminated_racer_columns()
 
+        if ENABLE_STREAMING:
+            self.set_text("eliminated_racers_scrolling", (" " * 7).join(eliminated_racer_names) + " " * 28, streaming_only=True)
+
         # Split the large array of strings into smaller arrays of 3 (one per column)
         # Also, pad the first row so the animation isn't as jarring
-        chunked_names = [["", "", ""]] + [
-            eliminated_racer_names[x : x + 3]
-            for x in range(0, len(eliminated_racer_names), 3)
+        chunked_names = [["", ""]] + [
+            eliminated_racer_names[x : x + 2]
+            for x in range(0, len(eliminated_racer_names), 2)
         ]
 
         # Pad the last element to be 3 long if it isn't already
         # This is so we don't have to do checking before trying to access an element that doesn't exist
-        if len(q := chunked_names[-1]) < 3:
-            q += [""] * (3 - len(q))
+        if len(q := chunked_names[-1]) < 2:
+            q += [""] * (2 - len(q))
 
         # Offload the time delay code to a new thread so it doesn't block everything
         self.keep_animating_eor_eliminations = True
@@ -153,7 +175,6 @@ class OBSHandler:
         for chunk in chunked_names:
             self.append_text("eliminated_racers_column_1", chunk[0], separator)
             self.append_text("eliminated_racers_column_2", chunk[1], separator)
-            self.append_text("eliminated_racers_column_3", chunk[2], separator)
 
             # Allows for stopping the animation prematurely
             if self.keep_animating_eor_eliminations:
@@ -169,12 +190,20 @@ if __name__ == "__main__":
     obs.first_time_init()
     obs.animate_end_of_round_eliminations(
         [
-           "Player 1",
-           "Player 2",
-           "Player 3",
-           "Player 4"
-        ],
-        1,
+            "Racer 1",
+            "Racer 2",
+            "Racer 3",
+            "Racer 4",
+            "Racer 5",
+            "Racer 6",
+            "Racer 7",
+            "Racer 8",
+            "Racer 9",
+            "Racer 10",
+            "Racer 11",
+            "Racer 12",
+            "Racer 13"
+        ]
     )
-    time.sleep(4)
+    time.sleep(3)
     obs.finish_end_of_round_eliminations_animation()

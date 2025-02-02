@@ -1,4 +1,4 @@
-const BASE_IP = "192.168.132.105:3000";
+const BASE_IP = "192.168.132.106:3000";
 
 
 let shouldUpdateData = true;

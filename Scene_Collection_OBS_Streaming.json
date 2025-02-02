@@ -1,6 +1,6 @@
 {
     "current_scene": "Round Complete",
-    "current_program_scene": "Basic Camera View",
+    "current_program_scene": "Round Complete",
     "scene_order": [
         {
             "name": "Blank"
@@ -15,16 +15,16 @@
             "name": "Advanced Camera View"
         },
         {
-            "name": "Video Playback"
-        },
-        {
             "name": "Round Complete"
         },
         {
             "name": "Custom Text"
+        },
+        {
+            "name": "Video Playback"
         }
     ],
-    "name": "Pinewood Derby",
+    "name": "Pinewood Derby Streaming",
     "groups": [
         {
             "prev_ver": 503316482,
@@ -46,7 +46,7 @@
                         "rot": 0.0,
                         "pos": {
                             "x": 2.0,
-                            "y": 126.0
+                            "y": 125.9998779296875
                         },
                         "scale": {
                             "x": 1.0,
@@ -122,7 +122,7 @@
                         "rot": 0.0,
                         "pos": {
                             "x": 60.0,
-                            "y": 126.0
+                            "y": 125.9998779296875
                         },
                         "scale": {
                             "x": 1.0,
@@ -159,7 +159,7 @@
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 59.0,
+                            "x": 59.000244140625,
                             "y": 66.0
                         },
                         "scale": {
@@ -266,86 +266,10 @@
             "versioned_id": "group",
             "settings": {
                 "custom_size": true,
-                "cx": 1842,
-                "cy": 148,
+                "cx": 1412,
+                "cy": 93,
                 "id_counter": 0,
                 "items": [
-                    {
-                        "name": "1vs2_indicator",
-                        "source_uuid": "1e04fd7f-e9d7-4116-b8a5-55a2a0c911c4",
-                        "visible": true,
-                        "locked": false,
-                        "rot": 0.0,
-                        "pos": {
-                            "x": 1610.0,
-                            "y": 35.0
-                        },
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "align": 5,
-                        "bounds_type": 0,
-                        "bounds_align": 0,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 13,
-                        "group_item_backup": false,
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {}
-                    },
-                    {
-                        "name": "up_next",
-                        "source_uuid": "1d77256f-d889-4ae8-9fc7-a990db878027",
-                        "visible": true,
-                        "locked": false,
-                        "rot": 0.0,
-                        "pos": {
-                            "x": 270.0,
-                            "y": 74.0
-                        },
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "align": 5,
-                        "bounds_type": 0,
-                        "bounds_align": 0,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 5,
-                        "group_item_backup": false,
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {}
-                    },
                     {
                         "name": "now_racing",
                         "source_uuid": "61e4f31e-6425-4d18-8278-66485768e2d9",
@@ -353,8 +277,8 @@
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 382.0,
-                            "y": 0.0
+                            "x": 259.0,
+                            "y": 45.0
                         },
                         "scale": {
                             "x": 1.0,
@@ -385,14 +309,14 @@
                         "private_settings": {}
                     },
                     {
-                        "name": "up_next_label",
-                        "source_uuid": "6e07d140-2abd-4ab1-b15e-b5e188df3ecc",
+                        "name": "round_number",
+                        "source_uuid": "fb0fa4a4-a822-4397-ba8c-0d9483907c8a",
                         "visible": true,
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 2.0,
-                            "y": 74.0
+                            "x": 0.0,
+                            "y": 0.0
                         },
                         "scale": {
                             "x": 1.0,
@@ -409,7 +333,7 @@
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 34,
+                        "id": 31,
                         "group_item_backup": false,
                         "scale_filter": "disable",
                         "blend_method": "default",
@@ -430,7 +354,7 @@
                         "rot": 0.0,
                         "pos": {
                             "x": 0.0,
-                            "y": 0.0
+                            "y": 45.0
                         },
                         "scale": {
                             "x": 1.0,
@@ -459,100 +383,20 @@
                             "duration": 0
                         },
                         "private_settings": {}
-                    }
-                ]
-            },
-            "mixers": 0,
-            "sync": 0,
-            "flags": 0,
-            "volume": 1.0,
-            "balance": 0.5,
-            "enabled": true,
-            "muted": false,
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "hotkeys": {
-                "libobs.show_scene_item.13": [],
-                "libobs.hide_scene_item.13": [],
-                "libobs.show_scene_item.5": [],
-                "libobs.hide_scene_item.5": [],
-                "libobs.show_scene_item.4": [],
-                "libobs.hide_scene_item.4": [],
-                "libobs.show_scene_item.34": [],
-                "libobs.hide_scene_item.34": [],
-                "libobs.show_scene_item.35": [],
-                "libobs.hide_scene_item.35": []
-            },
-            "deinterlace_mode": 0,
-            "deinterlace_field_order": 0,
-            "monitoring_type": 0,
-            "private_settings": {}
-        },
-        {
-            "prev_ver": 503316482,
-            "name": "camera_view_group_advanced",
-            "uuid": "3d46d4cb-6d72-4c1a-a05b-85028e06edea",
-            "id": "group",
-            "versioned_id": "group",
-            "settings": {
-                "custom_size": true,
-                "cx": 1449,
-                "cy": 815,
-                "id_counter": 0,
-                "items": [
-                    {
-                        "name": "Basic Camera View",
-                        "source_uuid": "815e714e-a38e-420e-a0c1-6bfee5b74cc0",
-                        "visible": true,
-                        "locked": false,
-                        "rot": 0.0,
-                        "pos": {
-                            "x": 1.0,
-                            "y": 0.0
-                        },
-                        "scale": {
-                            "x": 0.75104165077209473,
-                            "y": 0.75092589855194092
-                        },
-                        "align": 5,
-                        "bounds_type": 0,
-                        "bounds_align": 0,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 58,
-                        "group_item_backup": false,
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {}
                     },
                     {
-                        "name": "camera_view_border_advanced",
-                        "source_uuid": "5741b17c-e950-4eb4-a8e7-b70201aa21a7",
+                        "name": "1vs2_indicator",
+                        "source_uuid": "fb11ab5b-268a-4fa9-9e18-13c3ab01c2cf",
                         "visible": true,
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 0.0,
-                            "y": 0.0
+                            "x": 1296.0,
+                            "y": 50.0
                         },
                         "scale": {
-                            "x": 0.75468748807907104,
-                            "y": 0.75462961196899414
+                            "x": 1.0,
+                            "y": 1.0
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -565,7 +409,7 @@
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 37,
+                        "id": 59,
                         "group_item_backup": false,
                         "scale_filter": "disable",
                         "blend_method": "default",
@@ -592,10 +436,14 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "hotkeys": {
-                "libobs.show_scene_item.58": [],
-                "libobs.hide_scene_item.58": [],
-                "libobs.show_scene_item.37": [],
-                "libobs.hide_scene_item.37": []
+                "libobs.show_scene_item.4": [],
+                "libobs.hide_scene_item.4": [],
+                "libobs.show_scene_item.31": [],
+                "libobs.hide_scene_item.31": [],
+                "libobs.show_scene_item.35": [],
+                "libobs.hide_scene_item.35": [],
+                "libobs.show_scene_item.59": [],
+                "libobs.hide_scene_item.59": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -622,7 +470,7 @@
                         "rot": 0.0,
                         "pos": {
                             "x": 2.0,
-                            "y": 126.0
+                            "y": 125.9998779296875
                         },
                         "scale": {
                             "x": 1.0,
@@ -698,7 +546,7 @@
                         "rot": 0.0,
                         "pos": {
                             "x": 60.0,
-                            "y": 126.0
+                            "y": 125.9998779296875
                         },
                         "scale": {
                             "x": 1.0,
@@ -833,6 +681,113 @@
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
             "private_settings": {}
+        },
+        {
+            "prev_ver": 503316482,
+            "name": "track_camera_group",
+            "uuid": "d174f8ac-bfc3-45b6-b2c5-e6b1bcf5824d",
+            "id": "group",
+            "versioned_id": "group",
+            "settings": {
+                "id_counter": 0,
+                "custom_size": true,
+                "cx": 653,
+                "cy": 367,
+                "items": [
+                    {
+                        "name": "track_camera",
+                        "source_uuid": "990335d3-804f-4f4c-9946-f079de30a72b",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 0.34010416269302368,
+                            "y": 0.33981481194496155
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 63,
+                        "group_item_backup": false,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "track_camera_border",
+                        "source_uuid": "ecfd353b-552a-4f91-b213-ce6202edfec9",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 0.34010416269302368,
+                            "y": 0.33981481194496155
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 64,
+                        "group_item_backup": false,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }
+                ]
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
         }
     ],
     "quick_transitions": [
@@ -916,7 +871,7 @@
         {
             "prev_ver": 503316482,
             "name": "1vs2_indicator",
-            "uuid": "1e04fd7f-e9d7-4116-b8a5-55a2a0c911c4",
+            "uuid": "fb11ab5b-268a-4fa9-9e18-13c3ab01c2cf",
             "id": "text_gdiplus",
             "versioned_id": "text_gdiplus_v2",
             "settings": {
@@ -924,11 +879,11 @@
                 "font": {
                     "face": "Arial",
                     "flags": 0,
-                    "size": 72,
+                    "size": 36,
                     "style": "Regular"
                 },
-                "color": 4290888129,
-                "bk_opacity": 0
+                "align": "center",
+                "color": 4290888129
             },
             "mixers": 0,
             "sync": 0,
@@ -955,11 +910,11 @@
             "versioned_id": "scene",
             "settings": {
                 "custom_size": false,
-                "id_counter": 58,
+                "id_counter": 65,
                 "items": [
                     {
-                        "name": "background_advanced",
-                        "source_uuid": "eb873b49-5b21-4066-97d0-d8796d147c51",
+                        "name": "Basic Camera View",
+                        "source_uuid": "815e714e-a38e-420e-a0c1-6bfee5b74cc0",
                         "visible": true,
                         "locked": false,
                         "rot": 0.0,
@@ -969,7 +924,159 @@
                         },
                         "scale": {
                             "x": 1.0,
+                            "y": 0.99969333410263062
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 58,
+                        "group_item_backup": false,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "track_camera",
+                        "source_uuid": "990335d3-804f-4f4c-9946-f079de30a72b",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 613.0
+                        },
+                        "scale": {
+                            "x": 0.34010416269302368,
+                            "y": 0.33981481194496155
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 63,
+                        "group_item_backup": true,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "track_camera_border",
+                        "source_uuid": "ecfd353b-552a-4f91-b213-ce6202edfec9",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 613.0
+                        },
+                        "scale": {
+                            "x": 0.34010416269302368,
+                            "y": 0.33981481194496155
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 64,
+                        "group_item_backup": true,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "track_camera_group",
+                        "source_uuid": "d174f8ac-bfc3-45b6-b2c5-e6b1bcf5824d",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 613.0
+                        },
+                        "scale": {
+                            "x": 1.0,
                             "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 65,
+                        "group_item_backup": false,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "background_advanced",
+                        "source_uuid": "eb873b49-5b21-4066-97d0-d8796d147c51",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 980.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 0.092592589557170868
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -996,90 +1103,14 @@
                         "private_settings": {}
                     },
                     {
-                        "name": "1vs2_indicator",
-                        "source_uuid": "1e04fd7f-e9d7-4116-b8a5-55a2a0c911c4",
-                        "visible": true,
-                        "locked": false,
-                        "rot": 0.0,
-                        "pos": {
-                            "x": 1652.0,
-                            "y": 926.0
-                        },
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "align": 5,
-                        "bounds_type": 0,
-                        "bounds_align": 0,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 13,
-                        "group_item_backup": true,
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {}
-                    },
-                    {
-                        "name": "up_next",
-                        "source_uuid": "1d77256f-d889-4ae8-9fc7-a990db878027",
-                        "visible": true,
-                        "locked": false,
-                        "rot": 0.0,
-                        "pos": {
-                            "x": 312.0,
-                            "y": 965.0
-                        },
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "align": 5,
-                        "bounds_type": 0,
-                        "bounds_align": 0,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 5,
-                        "group_item_backup": true,
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {}
-                    },
-                    {
                         "name": "now_racing",
                         "source_uuid": "61e4f31e-6425-4d18-8278-66485768e2d9",
                         "visible": true,
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 424.0,
-                            "y": 891.0
+                            "x": 269.0,
+                            "y": 1028.0
                         },
                         "scale": {
                             "x": 1.0,
@@ -1110,14 +1141,14 @@
                         "private_settings": {}
                     },
                     {
-                        "name": "up_next_label",
-                        "source_uuid": "6e07d140-2abd-4ab1-b15e-b5e188df3ecc",
+                        "name": "round_number",
+                        "source_uuid": "fb0fa4a4-a822-4397-ba8c-0d9483907c8a",
                         "visible": true,
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 44.0,
-                            "y": 965.0
+                            "x": 10.0,
+                            "y": 983.0
                         },
                         "scale": {
                             "x": 1.0,
@@ -1134,7 +1165,7 @@
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 34,
+                        "id": 31,
                         "group_item_backup": true,
                         "scale_filter": "disable",
                         "blend_method": "default",
@@ -1154,8 +1185,8 @@
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 42.0,
-                            "y": 891.0
+                            "x": 10.0,
+                            "y": 1028.0
                         },
                         "scale": {
                             "x": 1.0,
@@ -1186,14 +1217,52 @@
                         "private_settings": {}
                     },
                     {
+                        "name": "1vs2_indicator",
+                        "source_uuid": "fb11ab5b-268a-4fa9-9e18-13c3ab01c2cf",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 1306.0,
+                            "y": 1033.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 59,
+                        "group_item_backup": true,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
                         "name": "footer",
                         "source_uuid": "15717f30-c592-47a7-bd24-e48732776e43",
                         "visible": true,
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 42.0,
-                            "y": 891.0
+                            "x": 10.0,
+                            "y": 983.0
                         },
                         "scale": {
                             "x": 1.0,
@@ -1222,7 +1291,7 @@
                             "duration": 0
                         },
                         "private_settings": {
-                            "collapsed": true
+                            "collapsed": false
                         }
                     },
                     {
@@ -1232,12 +1301,12 @@
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 1527.0,
-                            "y": 696.0
+                            "x": 1513.07275390625,
+                            "y": 1047.7418212890625
                         },
                         "scale": {
-                            "x": 1.0,
-                            "y": 1.0
+                            "x": 0.53636366128921509,
+                            "y": 0.53763443231582642
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -1270,12 +1339,12 @@
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 1526.0,
-                            "y": 636.0
+                            "x": 1512.536376953125,
+                            "y": 1015.4838256835938
                         },
                         "scale": {
-                            "x": 1.0,
-                            "y": 1.0
+                            "x": 0.53636366128921509,
+                            "y": 0.53763443231582642
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -1308,12 +1377,12 @@
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 1585.0,
-                            "y": 696.0
+                            "x": 1544.1817626953125,
+                            "y": 1047.7418212890625
                         },
                         "scale": {
-                            "x": 1.0,
-                            "y": 1.0
+                            "x": 0.53636366128921509,
+                            "y": 0.53763443231582642
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -1346,12 +1415,12 @@
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 1584.0,
-                            "y": 636.0
+                            "x": 1543.6456298828125,
+                            "y": 1015.4838256835938
                         },
                         "scale": {
-                            "x": 1.0,
-                            "y": 1.0
+                            "x": 0.53636366128921509,
+                            "y": 0.53763443231582642
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -1384,12 +1453,12 @@
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 1525.0,
-                            "y": 570.0
+                            "x": 1512.0,
+                            "y": 979.99993896484375
                         },
                         "scale": {
-                            "x": 1.0,
-                            "y": 1.0
+                            "x": 0.53636366128921509,
+                            "y": 0.53763443231582642
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -1422,12 +1491,12 @@
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 1525.0,
-                            "y": 570.0
+                            "x": 1512.0,
+                            "y": 979.99993896484375
                         },
                         "scale": {
-                            "x": 1.0,
-                            "y": 1.0
+                            "x": 0.53636366128921509,
+                            "y": 0.53763443231582642
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -1462,12 +1531,12 @@
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 1528.0,
-                            "y": 392.0
+                            "x": 1721.07275390625,
+                            "y": 1047.7418212890625
                         },
                         "scale": {
-                            "x": 1.0,
-                            "y": 1.0
+                            "x": 0.53636366128921509,
+                            "y": 0.53763443231582642
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -1500,12 +1569,12 @@
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 1527.0,
-                            "y": 332.0
+                            "x": 1720.536376953125,
+                            "y": 1015.4838256835938
                         },
                         "scale": {
-                            "x": 1.0,
-                            "y": 1.0
+                            "x": 0.53636366128921509,
+                            "y": 0.53763443231582642
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -1538,12 +1607,12 @@
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 1586.0,
-                            "y": 392.0
+                            "x": 1752.1817626953125,
+                            "y": 1047.7418212890625
                         },
                         "scale": {
-                            "x": 1.0,
-                            "y": 1.0
+                            "x": 0.53636366128921509,
+                            "y": 0.53763443231582642
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -1576,12 +1645,12 @@
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 1585.0,
-                            "y": 332.0
+                            "x": 1751.6455078125,
+                            "y": 1015.4838256835938
                         },
                         "scale": {
-                            "x": 1.0,
-                            "y": 1.0
+                            "x": 0.53636366128921509,
+                            "y": 0.53763443231582642
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -1614,12 +1683,12 @@
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 1526.0,
-                            "y": 266.0
+                            "x": 1720.0,
+                            "y": 979.99993896484375
                         },
                         "scale": {
-                            "x": 1.0,
-                            "y": 1.0
+                            "x": 0.53636366128921509,
+                            "y": 0.53763443231582642
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -1652,12 +1721,12 @@
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 1526.0,
-                            "y": 266.0
+                            "x": 1720.0,
+                            "y": 979.99993896484375
                         },
                         "scale": {
-                            "x": 1.0,
-                            "y": 1.0
+                            "x": 0.53636366128921509,
+                            "y": 0.53763443231582642
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -1671,160 +1740,6 @@
                         "crop_right": 0,
                         "crop_bottom": 0,
                         "id": 39,
-                        "group_item_backup": false,
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {
-                            "collapsed": true
-                        }
-                    },
-                    {
-                        "name": "round_number",
-                        "source_uuid": "fb0fa4a4-a822-4397-ba8c-0d9483907c8a",
-                        "visible": true,
-                        "locked": false,
-                        "rot": 0.0,
-                        "pos": {
-                            "x": 1552.0,
-                            "y": 52.0
-                        },
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "align": 5,
-                        "bounds_type": 0,
-                        "bounds_align": 0,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 31,
-                        "group_item_backup": false,
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {}
-                    },
-                    {
-                        "name": "Basic Camera View",
-                        "source_uuid": "815e714e-a38e-420e-a0c1-6bfee5b74cc0",
-                        "visible": true,
-                        "locked": false,
-                        "rot": 0.0,
-                        "pos": {
-                            "x": 41.0,
-                            "y": 40.0
-                        },
-                        "scale": {
-                            "x": 0.75104165077209473,
-                            "y": 0.75092589855194092
-                        },
-                        "align": 5,
-                        "bounds_type": 0,
-                        "bounds_align": 0,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 58,
-                        "group_item_backup": true,
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {}
-                    },
-                    {
-                        "name": "camera_view_border_advanced",
-                        "source_uuid": "5741b17c-e950-4eb4-a8e7-b70201aa21a7",
-                        "visible": true,
-                        "locked": false,
-                        "rot": 0.0,
-                        "pos": {
-                            "x": 40.0,
-                            "y": 40.0
-                        },
-                        "scale": {
-                            "x": 0.75468748807907104,
-                            "y": 0.75462961196899414
-                        },
-                        "align": 5,
-                        "bounds_type": 0,
-                        "bounds_align": 0,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 37,
-                        "group_item_backup": true,
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {}
-                    },
-                    {
-                        "name": "camera_view_group_advanced",
-                        "source_uuid": "3d46d4cb-6d72-4c1a-a05b-85028e06edea",
-                        "visible": true,
-                        "locked": false,
-                        "rot": 0.0,
-                        "pos": {
-                            "x": 40.0,
-                            "y": 40.0
-                        },
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "align": 5,
-                        "bounds_type": 0,
-                        "bounds_align": 0,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 38,
                         "group_item_backup": false,
                         "scale_filter": "disable",
                         "blend_method": "default",
@@ -1862,10 +1777,14 @@
                 "libobs.hide_scene_item.52": [],
                 "libobs.show_scene_item.39": [],
                 "libobs.hide_scene_item.39": [],
-                "libobs.show_scene_item.31": [],
-                "libobs.hide_scene_item.31": [],
-                "libobs.show_scene_item.38": [],
-                "libobs.hide_scene_item.38": []
+                "libobs.show_scene_item.58": [],
+                "libobs.hide_scene_item.58": [],
+                "libobs.show_scene_item.63": [],
+                "libobs.hide_scene_item.63": [],
+                "libobs.show_scene_item.64": [],
+                "libobs.hide_scene_item.64": [],
+                "libobs.show_scene_item.65": [],
+                "libobs.hide_scene_item.65": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -1927,7 +1846,7 @@
         {
             "prev_ver": 503316482,
             "name": "background_eliminated",
-            "uuid": "1eb9f385-5a23-4d52-aedb-1b476417e026",
+            "uuid": "b585c6e7-6d5f-419b-95ed-d67dd28a9e3f",
             "id": "color_source",
             "versioned_id": "color_source_v3",
             "settings": {
@@ -2099,8 +2018,9 @@
             "id": "dshow_input",
             "versioned_id": "dshow_input",
             "settings": {
-                "video_device_id": "NexiGo N60 FHD Webcam:\\\\?\\usb#22vid_1d6c&pid_0103&mi_00#226&c9fd7ac&6&0000#22{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\global",
-                "last_video_device_id": "NexiGo N60 FHD Webcam:\\\\?\\usb#22vid_1d6c&pid_0103&mi_00#226&c9fd7ac&6&0000#22{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\global"
+                "last_video_device_id": "OBS Virtual Camera:",
+                "video_device_id": "OBS Virtual Camera:",
+                "active": true
             },
             "mixers": 255,
             "sync": 0,
@@ -2126,43 +2046,17 @@
         },
         {
             "prev_ver": 503316482,
-            "name": "camera_view_border_advanced",
-            "uuid": "5741b17c-e950-4eb4-a8e7-b70201aa21a7",
-            "id": "image_source",
-            "versioned_id": "image_source",
-            "settings": {
-                "file": "D:/Documents/Projects/Miscellaneous/Pinewood Derby/camera_border.png"
-            },
-            "mixers": 0,
-            "sync": 0,
-            "flags": 0,
-            "volume": 1.0,
-            "balance": 0.5,
-            "enabled": true,
-            "muted": false,
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "hotkeys": {},
-            "deinterlace_mode": 0,
-            "deinterlace_field_order": 0,
-            "monitoring_type": 0,
-            "private_settings": {}
-        },
-        {
-            "prev_ver": 503316482,
             "name": "Custom Text",
             "uuid": "c4bb8062-c62f-40ea-8774-22ce0a0a1d69",
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
                 "custom_size": false,
-                "id_counter": 2,
+                "id_counter": 7,
                 "items": [
                     {
-                        "name": "background_blank",
-                        "source_uuid": "8b96d474-66e1-470d-9871-ae9af7506385",
+                        "name": "Basic Camera View",
+                        "source_uuid": "815e714e-a38e-420e-a0c1-6bfee5b74cc0",
                         "visible": true,
                         "locked": false,
                         "rot": 0.0,
@@ -2185,7 +2079,45 @@
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 1,
+                        "id": 3,
+                        "group_item_backup": false,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "background_eliminated",
+                        "source_uuid": "b585c6e7-6d5f-419b-95ed-d67dd28a9e3f",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 979.9998779296875
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 0.092592589557170868
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 4,
                         "group_item_backup": false,
                         "scale_filter": "disable",
                         "blend_method": "default",
@@ -2200,30 +2132,30 @@
                     },
                     {
                         "name": "custom_text",
-                        "source_uuid": "db150db7-0238-4590-87f5-7a02250468a8",
+                        "source_uuid": "6adb31b6-31c7-445e-b3cf-c612a23dcbc8",
                         "visible": true,
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
                             "x": 0.0,
-                            "y": 0.0
+                            "y": 1000.0
                         },
                         "scale": {
-                            "x": 1.0,
-                            "y": 1.0
+                            "x": 0.42708331346511841,
+                            "y": 0.42685174942016602
                         },
                         "align": 5,
                         "bounds_type": 6,
-                        "bounds_align": 0,
+                        "bounds_align": 4,
                         "bounds": {
                             "x": 1920.0,
-                            "y": 1080.0
+                            "y": 80.0
                         },
                         "crop_left": 0,
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 2,
+                        "id": 5,
                         "group_item_backup": false,
                         "scale_filter": "disable",
                         "blend_method": "default",
@@ -2251,10 +2183,12 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.show_scene_item.1": [],
-                "libobs.hide_scene_item.1": [],
-                "libobs.show_scene_item.2": [],
-                "libobs.hide_scene_item.2": []
+                "libobs.show_scene_item.3": [],
+                "libobs.hide_scene_item.3": [],
+                "libobs.show_scene_item.4": [],
+                "libobs.hide_scene_item.4": [],
+                "libobs.show_scene_item.5": [],
+                "libobs.hide_scene_item.5": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -2264,21 +2198,26 @@
         {
             "prev_ver": 503316482,
             "name": "custom_text",
-            "uuid": "db150db7-0238-4590-87f5-7a02250468a8",
+            "uuid": "6adb31b6-31c7-445e-b3cf-c612a23dcbc8",
             "id": "text_gdiplus",
             "versioned_id": "text_gdiplus_v2",
             "settings": {
+                "chatlog": false,
+                "extents": false,
+                "gradient": false,
                 "outline": false,
-                "undo_sname": "Text (GDI+) 3 2",
-                "text": "The event will start soon\n\n\nStop destroying volcanoes to make lava lamps",
+                "text": "The event still start soon. Stop destroying volcanos to make lava lamps.                     ",
+                "undo_sname": "run_times_header 2 2 2",
+                "undo_suuid": "6adb31b6-31c7-445e-b3cf-c612a23dcbc8",
                 "font": {
                     "face": "Arial",
                     "flags": 0,
-                    "size": 96,
+                    "size": 128,
                     "style": "Regular"
                 },
-                "align": "center",
-                "color": 4294967295
+                "align": "left",
+                "valign": "center",
+                "color": 16777215
             },
             "mixers": 0,
             "sync": 0,
@@ -2295,7 +2234,40 @@
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
-            "private_settings": {}
+            "private_settings": {},
+            "filters": [
+                {
+                    "prev_ver": 503316482,
+                    "name": "Scroll",
+                    "uuid": "27e6fe26-b01a-48bc-be34-be244ad0f50e",
+                    "id": "scroll_filter",
+                    "versioned_id": "scroll_filter",
+                    "settings": {
+                        "limit_cx": true,
+                        "limit_cy": false,
+                        "speed_x": 300,
+                        "cx": 4475,
+                        "cy": 110,
+                        "loop": true
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }
+            ]
         },
         {
             "prev_ver": 503316482,
@@ -2351,8 +2323,8 @@
         },
         {
             "prev_ver": 503316482,
-            "name": "eliminated_racers_column_1",
-            "uuid": "6adb31b6-31c7-445e-b3cf-c612a23dcbc8",
+            "name": "elimiated_racers_scrolling",
+            "uuid": "64129878-2d01-4bc0-a783-8260024c50ca",
             "id": "text_gdiplus",
             "versioned_id": "text_gdiplus_v2",
             "settings": {
@@ -2360,51 +2332,18 @@
                 "extents": false,
                 "gradient": false,
                 "outline": false,
+                "text": "",
                 "undo_sname": "run_times_header 2 2 2",
+                "undo_suuid": "6adb31b6-31c7-445e-b3cf-c612a23dcbc8",
                 "font": {
                     "face": "Arial",
-                    "style": "Regular",
-                    "size": 60,
-                    "flags": 0
+                    "flags": 0,
+                    "size": 128,
+                    "style": "Regular"
                 },
-                "align": "center",
-                "color": 16777215,
-                "text": ""
-            },
-            "mixers": 0,
-            "sync": 0,
-            "flags": 0,
-            "volume": 1.0,
-            "balance": 0.5,
-            "enabled": true,
-            "muted": false,
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "hotkeys": {},
-            "deinterlace_mode": 0,
-            "deinterlace_field_order": 0,
-            "monitoring_type": 0,
-            "private_settings": {}
-        },
-        {
-            "prev_ver": 503316482,
-            "name": "eliminated_racers_column_2",
-            "uuid": "aceb394e-fe50-40dc-922a-abd9d5ed3ec9",
-            "id": "text_gdiplus",
-            "versioned_id": "text_gdiplus_v2",
-            "settings": {
-                "undo_sname": "eliminated_racers_column_2",
-                "font": {
-                    "face": "Arial",
-                    "style": "Regular",
-                    "size": 60,
-                    "flags": 0
-                },
-                "align": "center",
-                "color": 16777215,
-                "text": ""
+                "align": "left",
+                "valign": "center",
+                "color": 16777215
             },
             "mixers": 0,
             "sync": 0,
@@ -2426,10 +2365,17 @@
                 {
                     "prev_ver": 503316482,
                     "name": "Scroll",
-                    "uuid": "1371af0b-17df-48f4-9bd3-d0655fc89749",
+                    "uuid": "5a237523-4206-43bf-9f69-0cf3aa683dba",
                     "id": "scroll_filter",
                     "versioned_id": "scroll_filter",
-                    "settings": {},
+                    "settings": {
+                        "limit_cx": true,
+                        "limit_cy": false,
+                        "speed_x": 300,
+                        "cx": 5000,
+                        "cy": 110,
+                        "loop": true
+                    },
                     "mixers": 0,
                     "sync": 0,
                     "flags": 0,
@@ -2531,7 +2477,7 @@
                 "font": {
                     "face": "Arial",
                     "flags": 0,
-                    "size": 72,
+                    "size": 48,
                     "style": "Regular"
                 },
                 "color": 4286578687,
@@ -2566,7 +2512,7 @@
                 "font": {
                     "face": "Arial",
                     "flags": 0,
-                    "size": 72,
+                    "size": 48,
                     "style": "Regular"
                 },
                 "color": 4286578687,
@@ -2596,16 +2542,16 @@
             "id": "text_gdiplus",
             "versioned_id": "text_gdiplus_v2",
             "settings": {
-                "text": "The following players have been eliminated",
+                "text": "The following players have been eliminated:",
                 "undo_sname": "Text (GDI+) 3 2",
                 "font": {
-                    "face": "Verdana",
+                    "face": "Arial",
                     "flags": 0,
-                    "size": 85,
+                    "size": 110,
                     "style": "Regular"
                 },
                 "align": "center",
-                "color": 5570556
+                "color": 8388607
             },
             "mixers": 0,
             "sync": 0,
@@ -2666,8 +2612,8 @@
             "id": "text_gdiplus",
             "versioned_id": "text_gdiplus_v2",
             "settings": {
-                "undo_sname": "run_time_1",
                 "text": "0.00",
+                "undo_sname": "run_time_1",
                 "font": {
                     "face": "Arial",
                     "flags": 0,
@@ -2798,21 +2744,59 @@
             "versioned_id": "scene",
             "settings": {
                 "custom_size": false,
-                "id_counter": 8,
+                "id_counter": 22,
                 "items": [
                     {
+                        "name": "Basic Camera View",
+                        "source_uuid": "815e714e-a38e-420e-a0c1-6bfee5b74cc0",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 10,
+                        "group_item_backup": false,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
                         "name": "background_eliminated",
-                        "source_uuid": "1eb9f385-5a23-4d52-aedb-1b476417e026",
+                        "source_uuid": "b585c6e7-6d5f-419b-95ed-d67dd28a9e3f",
                         "visible": true,
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
                             "x": 0.0,
-                            "y": 0.0
+                            "y": 979.9998779296875
                         },
                         "scale": {
                             "x": 1.0,
-                            "y": 1.0
+                            "y": 0.092592589557170868
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -2825,7 +2809,7 @@
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 1,
+                        "id": 12,
                         "group_item_backup": false,
                         "scale_filter": "disable",
                         "blend_method": "default",
@@ -2839,107 +2823,31 @@
                         "private_settings": {}
                     },
                     {
-                        "name": "eliminated_racers_column_2",
-                        "source_uuid": "aceb394e-fe50-40dc-922a-abd9d5ed3ec9",
+                        "name": "elimiated_racers_scrolling",
+                        "source_uuid": "64129878-2d01-4bc0-a783-8260024c50ca",
                         "visible": true,
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 960.0,
-                            "y": 302.0
-                        },
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "align": 5,
-                        "bounds_type": 6,
-                        "bounds_align": 4,
-                        "bounds": {
-                            "x": 760.0,
-                            "y": 718.0
-                        },
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 3,
-                        "group_item_backup": false,
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {}
-                    },
-                    {
-                        "name": "eliminated_racers_column_1",
-                        "source_uuid": "6adb31b6-31c7-445e-b3cf-c612a23dcbc8",
-                        "visible": true,
-                        "locked": false,
-                        "rot": 0.0,
-                        "pos": {
-                            "x": 200.0,
-                            "y": 302.0
-                        },
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "align": 5,
-                        "bounds_type": 6,
-                        "bounds_align": 4,
-                        "bounds": {
-                            "x": 760.0,
-                            "y": 718.0
-                        },
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 4,
-                        "group_item_backup": false,
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {}
-                    },
-                    {
-                        "name": "round_complete_text",
-                        "source_uuid": "e2851eab-2975-4550-923c-41dddff1b1e0",
-                        "visible": true,
-                        "locked": false,
-                        "rot": 0.0,
-                        "pos": {
-                            "x": 460.0,
-                            "y": 51.0
-                        },
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "align": 5,
-                        "bounds_type": 0,
-                        "bounds_align": 0,
-                        "bounds": {
                             "x": 0.0,
-                            "y": 0.0
+                            "y": 1030.0
+                        },
+                        "scale": {
+                            "x": 0.42708331346511841,
+                            "y": 0.42685174942016602
+                        },
+                        "align": 5,
+                        "bounds_type": 6,
+                        "bounds_align": 4,
+                        "bounds": {
+                            "x": 1920.0,
+                            "y": 50.0
                         },
                         "crop_left": 0,
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 2,
+                        "id": 22,
                         "group_item_backup": false,
                         "scale_filter": "disable",
                         "blend_method": "default",
@@ -2959,12 +2867,12 @@
                         "locked": false,
                         "rot": 0.0,
                         "pos": {
-                            "x": 197.0,
-                            "y": 179.0
+                            "x": 420.7291259765625,
+                            "y": 985.0
                         },
                         "scale": {
-                            "x": 1.0,
-                            "y": 1.0
+                            "x": 0.42708331346511841,
+                            "y": 0.42685180902481079
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -2977,7 +2885,45 @@
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 8,
+                        "id": 20,
+                        "group_item_backup": false,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "round_complete_text",
+                        "source_uuid": "e2851eab-2975-4550-923c-41dddff1b1e0",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 10.5,
+                            "y": 985.00006103515625
+                        },
+                        "scale": {
+                            "x": 0.42708331346511841,
+                            "y": 0.4268517792224884
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 21,
                         "group_item_backup": false,
                         "scale_filter": "disable",
                         "blend_method": "default",
@@ -3005,16 +2951,16 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.show_scene_item.1": [],
-                "libobs.hide_scene_item.1": [],
-                "libobs.show_scene_item.3": [],
-                "libobs.hide_scene_item.3": [],
-                "libobs.show_scene_item.4": [],
-                "libobs.hide_scene_item.4": [],
-                "libobs.show_scene_item.2": [],
-                "libobs.hide_scene_item.2": [],
-                "libobs.show_scene_item.8": [],
-                "libobs.hide_scene_item.8": []
+                "libobs.show_scene_item.10": [],
+                "libobs.hide_scene_item.10": [],
+                "libobs.show_scene_item.12": [],
+                "libobs.hide_scene_item.12": [],
+                "libobs.show_scene_item.22": [],
+                "libobs.hide_scene_item.22": [],
+                "libobs.show_scene_item.20": [],
+                "libobs.hide_scene_item.20": [],
+                "libobs.show_scene_item.21": [],
+                "libobs.hide_scene_item.21": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -3028,12 +2974,12 @@
             "id": "text_gdiplus",
             "versioned_id": "text_gdiplus_v2",
             "settings": {
-                "undo_sname": "Text (GDI+) 3 2",
                 "text": "Round -1 Complete",
+                "undo_sname": "Text (GDI+) 3 2",
                 "font": {
                     "face": "Arial",
                     "flags": 1,
-                    "size": 128,
+                    "size": 110,
                     "style": "Bold"
                 },
                 "align": "center",
@@ -3067,7 +3013,7 @@
                 "font": {
                     "face": "Arial",
                     "flags": 0,
-                    "size": 90,
+                    "size": 48,
                     "style": "Regular"
                 },
                 "align": "center",
@@ -3132,8 +3078,8 @@
             "id": "text_gdiplus",
             "versioned_id": "text_gdiplus_v2",
             "settings": {
-                "undo_sname": "run_time_1",
                 "text": "0.00",
+                "undo_sname": "run_time_1",
                 "font": {
                     "face": "Arial",
                     "flags": 0,
@@ -3258,21 +3204,15 @@
         },
         {
             "prev_ver": 503316482,
-            "name": "up_next",
-            "uuid": "1d77256f-d889-4ae8-9fc7-a990db878027",
-            "id": "text_gdiplus",
-            "versioned_id": "text_gdiplus_v2",
+            "name": "track_camera",
+            "uuid": "990335d3-804f-4f4c-9946-f079de30a72b",
+            "id": "dshow_input",
+            "versioned_id": "dshow_input",
             "settings": {
-                "text": "N/A vs. N/A",
-                "font": {
-                    "face": "Arial",
-                    "flags": 0,
-                    "size": 72,
-                    "style": "Regular"
-                },
-                "color": 4286578687
+                "video_device_id": "OBS Virtual Camera:",
+                "last_video_device_id": "OBS Virtual Camera:"
             },
-            "mixers": 0,
+            "mixers": 255,
             "sync": 0,
             "flags": 0,
             "volume": 1.0,
@@ -3283,7 +3223,12 @@
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
-            "hotkeys": {},
+            "hotkeys": {
+                "libobs.mute": [],
+                "libobs.unmute": [],
+                "libobs.push-to-mute": [],
+                "libobs.push-to-talk": []
+            },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
@@ -3291,19 +3236,12 @@
         },
         {
             "prev_ver": 503316482,
-            "name": "up_next_label",
-            "uuid": "6e07d140-2abd-4ab1-b15e-b5e188df3ecc",
-            "id": "text_gdiplus",
-            "versioned_id": "text_gdiplus_v2",
+            "name": "track_camera_border",
+            "uuid": "ecfd353b-552a-4f91-b213-ce6202edfec9",
+            "id": "image_source",
+            "versioned_id": "image_source",
             "settings": {
-                "text": "Up Next: ",
-                "font": {
-                    "face": "Arial",
-                    "flags": 0,
-                    "size": 72,
-                    "style": "Regular"
-                },
-                "color": 4286578687
+                "file": "D:/Documents/Projects/Miscellaneous/Pinewood Derby/camera_border.png"
             },
             "mixers": 0,
             "sync": 0,

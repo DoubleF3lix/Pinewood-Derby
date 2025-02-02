@@ -3,6 +3,8 @@
 #include "esp_event.h"
 #include "esp_wifi.h"
 
+#define GET_DEVICE_COUNT_BUTTON_PIN 15
+
 const char* SSID = "PiD-AP";
 const char* PASSWORD = "longleggedducks";
 
@@ -53,7 +55,7 @@ void blinkAccordingToConnectedDevicesCount() {
 
 void setup() {
     // LED output
-    pinMode(21, INPUT_PULLDOWN);
+    pinMode(GET_DEVICE_COUNT_BUTTON_PIN, INPUT_PULLDOWN);
     pinMode(LED_BUILTIN, OUTPUT);
 
     WiFi.softAPConfig(gatewayIP, gatewayIP, subnet);
@@ -70,7 +72,7 @@ void setup() {
 }
 
 void loop() {
-    if (digitalRead(21) == HIGH) {
+    if (digitalRead(GET_DEVICE_COUNT_BUTTON_PIN) == HIGH) {
         blinkAccordingToConnectedDevicesCount();
     }
 }

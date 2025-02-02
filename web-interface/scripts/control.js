@@ -27,9 +27,6 @@ function addRunToRaceTable(racer1Time, racer2Time) {
     const rowCount = table.rows.length;
     const newRow = table.insertRow(rowCount);
 
-    // const runNumCell = newRow.insertCell(0);
-    // runNumCell.textContent = (rowCount + 1).toString();
-
     // Create the base input box for both columns
     const racerCellInput = document.createElement("input");
     racerCellInput.classList.add("textbox", "noSpin")
@@ -108,9 +105,11 @@ async function nextRound() {
 
 async function nextRace() {
     let runCount = Object.keys(getRaceDataFromRaceTable()).length;
-    if (runCount < 2) {
+    if (runCount == 0) {
+        showPopup("You can't start a new race!<br>No runs been recorded!", async () => {}, true);
+    } else if (runCount == 1) {
         showPopup(
-            `Are you sure you want to start a new race?<br>${runCount == 0 ? "No runs have" : "Only one run has"} been recorded!`,
+            "Are you sure you want to start a new race?<br>Only one run has been recorded!",
             async function () {
                 await network.post(`http://${BASE_IP}/next-race`);
             }

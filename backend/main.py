@@ -1,5 +1,6 @@
 import contextlib
 import os
+import sys
 
 import waitress
 from flask import Flask
@@ -20,7 +21,8 @@ app.register_blueprint(timer_endpoints.timer_board_blueprint)
 app.register_blueprint(ui_endpoints.ui_blueprint)
 
 
-def first_run():
+# The INIT file thing sucked anyway
+if "--init" in sys.argv or "-init" in sys.argv:
     print("First time loading. Initializing data...")
     ProgramData.active_tourney = ProgramData.swiss_tourney
     ProgramData.swiss_tourney.load_players_from_file()
@@ -32,10 +34,7 @@ def first_run():
         "Done! Swiss tourney has been set to the active tourney, players have been loaded, round 1 has been started, and the OBS handler has been initialized."
     )
 
-
-if "INIT" in os.listdir():
-    os.remove("INIT")
-    first_run()
+# Restore from files
 else:
     print("Loading pre-existing data...")
     # Data may not exist
@@ -66,4 +65,8 @@ else:
 
 
 print("Serving...")
-waitress.serve(app, host="192.168.132.105", port=3000, threads=4)
+try:
+    waitress.serve(app, host="192.168.132.106", port=3000, threads=8)
+except OSError:
+    print("Could not bind to static IP, using localhost")
+    waitress.serve(app, host="localhost", port=3000, threads=8)

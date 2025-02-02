@@ -1,9 +1,9 @@
-import requests
-from const import *
-from data import ProgramData
 from flask import Blueprint, Response, request
 from flask_cors import cross_origin
-from flask_server.utils import print_request_info
+
+from const import *
+from data import ProgramData
+from flask_server.utils import post_request, print_request_info
 
 motor_board_blueprint = Blueprint("motor_board_blueprint", __name__)
 
@@ -25,7 +25,7 @@ def give_start_approval():
 
     if ProgramData.cars_ready:
         ProgramData.approval_given = True
-        requests.post(f"http://{MOTOR_BOARD_IP}/give-start-approval")
+        post_request(f"http://{MOTOR_BOARD_IP}/give-start-approval")
         return Response(status=204)
     elif DEBUG:
         print("/give-start-approval - Tried to give approval, but cars not ready!")
@@ -41,7 +41,7 @@ def force_spin_motor():
     ProgramData.approval_given = False
 
     # Add silent parameter if silent is true (doesn't matter what the value is to the motor board)
-    requests.post(f"http://{MOTOR_BOARD_IP}/force-spin-motor", data={"silent": True} if request.json["silent"] == True else None)
+    post_request(f"http://{MOTOR_BOARD_IP}/force-spin-motor", data={"silent": True} if request.json["silent"] == True else None)
 
     return Response(status=204)
 
@@ -59,6 +59,6 @@ def run_started():
     ProgramData.obs_handler.reset_run_times()
 
     # Tell the timer board about the cool new info we just got
-    requests.post(f"http://{TIMER_BOARD_IP}/begin-run")
+    post_request(f"http://{TIMER_BOARD_IP}/begin-run")
 
     return Response(status=204)

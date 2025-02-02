@@ -1,4 +1,4 @@
-# Pinewood Derby 2023
+# Pinewood Derby
 - [Introduction](#introduction)
 - [The Why](#the-why)
   - [The 2021 Event](#the-2021-event)

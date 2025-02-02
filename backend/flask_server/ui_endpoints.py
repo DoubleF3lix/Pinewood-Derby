@@ -1,10 +1,11 @@
-import requests
 import tinydb
-from const import *
-from data import ProgramData
 from flask import Blueprint, Response, request
 from flask_cors import cross_origin
-from flask_server.utils import pad_decimals, print_request_info
+
+from const import *
+from data import ProgramData
+from flask_server.utils import (get_request, pad_decimals, post_request,
+                                print_request_info)
 from misc.obs_handler import obs_scene
 
 ui_blueprint = Blueprint("ui_blueprint", __name__)
@@ -20,6 +21,7 @@ def alert_controller():
     return Response(status=204)
 
 
+# TODO Why is this a request and not a function... we are the tourney???
 @ui_blueprint.route("/alert-controller-from-tourney", methods=["POST"])
 @cross_origin()
 def alert_controller_from_tourney():
@@ -82,7 +84,7 @@ def next_round():
     # End of round animation for Swiss (SET always returns [] for q[1])
     if q[1]:
         ProgramData.eliminated_racers = [r["name"] for r in q[1].values()]
-        requests.post(
+        post_request(
             f"http://{SELF_IP}/alert-controller-from-tourney",
             json={
                 "message": f"{len(ProgramData.eliminated_racers)} racer(s) have been eliminated. Please activate the end of round animation to display these to the audience."
@@ -98,7 +100,7 @@ def next_round():
         )
         ProgramData.active_tourney = ProgramData.SET_tourney
         ProgramData.active_tourney.start_new_round()
-        requests.post(
+        post_request(
             f"http://{SELF_IP}/alert-controller-from-tourney",
             json={"message": "Switching to Single Elimination Tourney Mode."},
         )
@@ -108,24 +110,24 @@ def next_round():
     # Handle popups for SET as we approach the end
     if ProgramData.active_tourney == ProgramData.SET_tourney:
         if len(ProgramData.active_tourney.racer_list) == 1:
-            requests.post(
+            post_request(
                 f"http://{SELF_IP}/alert-controller-from-tourney",
                 json={"message": f"We're done! The winner is {ProgramData.active_tourney.racer_list[list(ProgramData.active_tourney.racer_list)[0]]}"},
             )   
             ProgramData.active_tourney = None
             return Response(status=204)
         elif len(ProgramData.active_tourney.racer_list) == 2:
-            requests.post(
+            post_request(
                 f"http://{SELF_IP}/alert-controller-from-tourney",
                 json={"message": "Now entering the final match!"},
             )
         elif len(ProgramData.active_tourney.racer_list) <= 4 and len(ProgramData.active_tourney.racer_list) > 2:
-            requests.post(
+            post_request(
                 f"http://{SELF_IP}/alert-controller-from-tourney",
                 json={"message": "Now entering semi-finals!"},
             )
         elif len(ProgramData.active_tourney.racer_list) <= 8 and len(ProgramData.active_tourney.racer_list) > 4:
-            requests.post(
+            post_request(
                 f"http://{SELF_IP}/alert-controller-from-tourney",
                 json={"message": "Now entering quarter-finals!"},
             )
@@ -136,7 +138,7 @@ def next_round():
 
     ProgramData.save_data()
 
-    requests.post(f"http://{SELF_IP}/next-race")
+    post_request(f"http://{SELF_IP}/next-race")
 
     return Response(status=204)
 
@@ -162,7 +164,7 @@ def next_race():
 
     if not need_new_round:
         ProgramData.now_racing = ["N/A", "N/A"]
-        requests.post(
+        post_request(
             f"http://{SELF_IP}/alert-controller-from-tourney",
             json={
                 "message": "There are no more races! Please start a new round, then try again."
@@ -271,7 +273,7 @@ def video_player_action():
     elif action == "open_new":
         ProgramData.start_video_player()
     else:
-        requests.post(
+        post_request(
             f"http://{VIDEO_PLAYER_IP}/video-player-action", json={"action": action}
         )
 
@@ -317,9 +319,9 @@ def blink_board():
         return Response(status=400)
 
     if board == "timer":
-        requests.get(f"http://{TIMER_BOARD_IP}/blink")
+        get_request(f"http://{TIMER_BOARD_IP}/blink")
     elif board == "motor":
-        requests.get(f"http://{MOTOR_BOARD_IP}/blink")
+        get_request(f"http://{MOTOR_BOARD_IP}/blink")
 
     return Response(status=204)
 

@@ -5,7 +5,7 @@ import time
 import waitress
 from flask import Flask, Response, request
 from flask_cors import CORS, cross_origin
-from PyQt5 import QtWidgets, QtGui, QtCore, Qt
+from PyQt5 import Qt, QtCore, QtGui, QtWidgets
 
 try:
     from misc.video_player import Player
@@ -39,7 +39,6 @@ def video_player_action():
     # Clicks are emulated since sometimes it freezes if you call the functions manually
     if action == "load_latest_video":
         video_player.openlastvideobutton.click()
-        print("Done???")
     elif action == "toggle_playback":
         video_player.playbutton.click()
     elif action == "stop":

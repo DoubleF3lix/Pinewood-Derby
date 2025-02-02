@@ -159,9 +159,10 @@ class SwissTourney(BaseTourney):
         self.current_race_data = {"racers": [], "runs": []}
 
         eliminated_players: list | None = None
+        # TODO Round end code
         if (
             self.pypair_tourney.currentRound
-            > QUALIFIER_ROUND_COUNT
+            >= QUALIFIER_ROUND_COUNT
         ):
             eliminated_players = self.trim_players()
 
@@ -206,19 +207,20 @@ class SwissTourney(BaseTourney):
     def report_race(self) -> None:
         racer_one_total_time = self.get_race_time_from_runs(0)
         racer_two_total_time = self.get_race_time_from_runs(1)
+        run_count = self.get_run_count_for_race()
 
         # Offset racer one time if they're equal to act as a coin toss
-        if racer_one_total_time == racer_two_total_time:
-            print(
-                f"{self.current_race_data['players']=} Doing a coin flip to decide the winner. [{racer_one_total_time}/{racer_two_total_time}]"
-            )
-            # Add or subtract a 10 millisecond difference as a coin toss
-            racer_one_total_time += (1 if random.random() < 0.5 else -1) * 0.01
+        # Disabled cause I do it IRL
+        # if racer_one_total_time == racer_two_total_time:
+        #     print(
+        #         f"{self.current_race_data['players']=} Doing a coin flip to decide the winner. [{racer_one_total_time}/{racer_two_total_time}]"
+        #     )
+        #     # Add or subtract a 10 millisecond difference as a coin toss
+        #     racer_one_total_time += (1 if random.random() < 0.5 else -1) * 0.01
 
-        # Pypair uses the higher input as the winner, when we want the lower, so we'll use a 1/0 list to report and then the times for the history
-        pypair_report_list = [[1, 0], [0, 1]][
-            int(racer_one_total_time > racer_two_total_time)
-        ]
+        # Report the inverse of their times (faster time = higher score)
+        # 10 is the FAIL count (currently, should make it a config variable somewhere), so that's our inversion point (is that a thing?)
+        pypair_report_list = [(run_count * 10) - racer_one_total_time, (run_count * 10) - racer_two_total_time]
         self.pypair_tourney.reportMatch(
             self.pypair_tourney.tablesOut[0], pypair_report_list
         )

@@ -1,9 +1,9 @@
-import requests
-from const import *
-from data import ProgramData
 from flask import Blueprint, Response, request
 from flask_cors import cross_origin
-from flask_server.utils import print_request_info
+
+from const import *
+from data import ProgramData
+from flask_server.utils import post_request, print_request_info
 
 timer_board_blueprint = Blueprint("timer_board_blueprint", __name__)
 
@@ -47,6 +47,10 @@ def lane_end_triggered():
     finish_time: int = round(int(data_in[1]) // 10 / 100, 2)
     was_fail: bool = bool(int(data_in[3]))
 
+    # Fail time is set to 10 seconds on the board, override by uncommenting below
+    # if was_fail:
+    #     finish_time = 10
+
     run_report = [[finish_time, None], [None, finish_time]][lane_ID - 1]
     ProgramData.active_tourney.append_run(*run_report)
 
@@ -67,7 +71,7 @@ def mark_finish():
     if lane not in {1, 2}:
         return Response(status=400)
 
-    requests.post(f"http://{TIMER_BOARD_IP}/mark-finish", data={"lane": lane})
+    post_request(f"http://{TIMER_BOARD_IP}/mark-finish", data={"lane": lane})
 
     return Response(status=204)
 
@@ -81,7 +85,7 @@ def mark_fail():
     if lane not in {1, 2}:
         return Response(status=400)
 
-    requests.post(f"http://{TIMER_BOARD_IP}/mark-fail", data={"lane": lane})
+    post_request(f"http://{TIMER_BOARD_IP}/mark-fail", data={"lane": lane})
 
     return Response(status=204)
 
@@ -97,7 +101,7 @@ def set_lane_position():
 
     value: int = request.json["value"]
 
-    requests.post(f"http://{TIMER_BOARD_IP}/set-position", data={"lane": lane, "value": value})
+    post_request(f"http://{TIMER_BOARD_IP}/set-position", data={"lane": lane, "value": value})
 
     return Response(status=204)
 
@@ -113,7 +117,7 @@ def set_lane_run_timer():
 
     value: int = request.json["value"]
 
-    requests.post(f"http://{TIMER_BOARD_IP}/set-run-time", data={"lane": lane, "value": value})
+    post_request(f"http://{TIMER_BOARD_IP}/set-run-time", data={"lane": lane, "value": value})
 
     return Response(status=204)
 
@@ -125,8 +129,8 @@ def edit_show_time_on_finish():
 
     value: bool = request.json["value"]
 
-    requests.post(f"http://{TIMER_BOARD_IP}/edit-show-time-on-finish", data={"lane": 1, "value": int(value)})
-    requests.post(f"http://{TIMER_BOARD_IP}/edit-show-time-on-finish", data={"lane": 2, "value": int(value)})
+    post_request(f"http://{TIMER_BOARD_IP}/edit-show-time-on-finish", data={"lane": 1, "value": int(value)})
+    post_request(f"http://{TIMER_BOARD_IP}/edit-show-time-on-finish", data={"lane": 2, "value": int(value)})
 
     return Response(status=204)
 
@@ -144,7 +148,7 @@ def edit_lane_position_visibility():
     visibility: bool = request.json["visibility"]
     endpoint = "show-position" if visibility else "hide-position"
 
-    requests.post(f"http://{TIMER_BOARD_IP}/{endpoint}", data={"lane": lane})
+    post_request(f"http://{TIMER_BOARD_IP}/{endpoint}", data={"lane": lane})
 
     return Response(status=204)
 
@@ -161,6 +165,6 @@ def edit_lane_run_time_visibility():
     visibility: bool = request.json["visibility"]
     endpoint = "show-run-time" if visibility else "hide-run-time"
 
-    requests.post(f"http://{TIMER_BOARD_IP}/{endpoint}", data={"lane": lane})
+    post_request(f"http://{TIMER_BOARD_IP}/{endpoint}", data={"lane": lane})
 
     return Response(status=204)

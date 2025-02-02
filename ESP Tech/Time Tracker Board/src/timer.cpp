@@ -116,7 +116,7 @@ void LaserTimer::markFail() {
     // Just in case failing is marked after they've crossed
     this->positionDisplay.setSegments(LINED_SEGMENTS, 4, 0);
 
-    this->finishedRunTime = 30000;
+    this->finishedRunTime = 10000; // 10 seconds fail time (used to be 30, was way too long)
 }
 
 unsigned int LaserTimer::getRunTimeValue() {

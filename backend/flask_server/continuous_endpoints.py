@@ -1,6 +1,7 @@
-from data import ProgramData
 from flask import Blueprint, Response, jsonify
 from flask_cors import cross_origin
+
+from data import ProgramData
 
 continuous_blueprint = Blueprint("continuous_blueprint", __name__)
 

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pinewood Derby</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../stylesheets/main.css">
+    <link rel="stylesheet" href="../stylesheets/control.css">
+    <script type="text/javascript" src="../scripts/main.js"></script>
+    <script type="text/javascript" src="../scripts/control.js" defer></script>
+
+    <link rel="icon" href="data:,"> <!-- Stop the browser from asking for favicon -->
+</head>
+
+<body>
+    <div class="header">
+        <p>Pinewood Derby - Control Panel</p>
+    </div>
+
+    <div class="container">
+        <h1>Race Data</h1>
+        <p id="racer_now">Now Racing: N/A vs. N/A</p>
+        <p id="racer_next">Up Next: N/A vs. N/A</p>
+        <p id="races_left_in_round">Races Left in Round: 0</p>
+        <p id="players_left">Players Left: 0</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <!-- <th>Run No.</th> -->
+                    <th>Racer 1</th>
+                    <th>Racer 2</th>
+                    <th>Remove Run</th>
+                </tr>
+            </thead>
+            <tbody id="raceDataTable"></tbody>
+        </table>
+        <br>
+        <div class="buttonSeries">
+            <button class="standardButton inline" onclick="updateRaceData();">Update Race Data</button>
+            <button class="standardButton inline" onclick="fetchRaceData();">Refresh</button>
+            <button class="standardButton inline" onclick="addRunToRaceTable(0, 0);">Add Run</button>
+        </div>
+
+        <hr><br>
+
+        <h1>Race Management</h1>
+        <br>
+        <div class="buttonSeries">
+            <button class="standardButton inline" onclick="nextRound();">Next Round</button>
+            <button class="standardButton inline" onclick="nextRace();">Next Race</button>
+        </div>
+        <br>
+        <div class="buttonSeries">
+            <button id="markStartReadyButton" class="standardButton inline" onclick="markStartReady();">Mark Start Ready</button>
+            <button class="standardButton inline" onclick="manuallyStartMotor(false);">Manually Start Motor</button>
+        </div>
+        <br>
+        <input type="checkbox" id="autoShowTimerOnFinish" class="checkbox" onchange="editIgnoreIncomingDataFromTimer(this.checked);">
+        <label for="autoShowTimerOnFinish" class="checkbox">Ignore Incoming Data From Timer (AKA let people use the timer without running a tourney)</label>
+
+        <br>
+
+        <h3 class="buttonSeriesLabel">Finish Controls</h3>
+        <div class="buttonSeries">
+            <button class="standardButton inline" onclick="markLaneFail(1);">Mark Left Fail</button>
+            <button class="standardButton inline" onclick="markLaneFail(2);">Mark Right Fail</button>
+        </div>
+
+        <br>
+        <hr><br>
+
+        <h1>OBS Controls</h1>
+        <h3 class="buttonSeriesLabel">Scene Selection</h3>
+        <div class="buttonSeries">
+            <button class="standardButton inline" onclick="obsControls.setScene('blank');">Blank</button>
+            <button class="standardButton inline" onclick="obsControls.setScene('fullscreen');">Fullscreen</button>
+            <button class="standardButton inline" onclick="obsControls.setScene('basic_camera');">Basic Camera</button>
+            <button class="standardButton inline" onclick="obsControls.setScene('advanced_camera');">Advanced Camera</button>
+            <button class="standardButton inline" onclick="obsControls.setScene('round_complete');">Round Complete</button>
+            <button class="standardButton inline" onclick="obsControls.setScene('custom_text');">Custom Text</button>
+        </div>
+
+        <h3 class="buttonSeriesLabel">Miscellaneous</h3>
+        <div class="buttonSeries">
+            <button class="standardButton inline" onclick="roundCompleteAnimation.play();">Play Round Complete Animation</button>
+        </div>
+
+        <br><br>
+
+        <p class="smallText">Set Custom Text Card:</p>
+        <div class="textareaButtonCombo">
+            <textarea id="customTextInput" placeholder="Technical errors. Please hold."></textarea>
+            <button class="standardButton textboxButton" onclick="obsControls.setCustomTextCard();">Submit</button>
+        </div>
+
+        <br>
+        <hr><br>
+
+        <h1>Miscellaneous</h1>
+        <br>
+        <p class="smallText">Alert Emcee:</p>
+        <div class="textareaButtonCombo">
+            <textarea id="alertEmceeInput" placeholder="Final rounds approaching. Please announce."></textarea>
+            <button class="standardButton textboxButton" onclick="alertEmcee();">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        startGetRaceInfoLoop();
+        makePopup();
+    </script>
+</body>
+
+</html>

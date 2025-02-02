@@ -48,3 +48,6 @@ class BaseTourney:
     def get_race_time_from_runs(self, lane_ID: int) -> float:
         # Use filter to remove None arguments just in case
         return sum(filter(None, (q[lane_ID] for q in self.current_race_data["runs"])))
+
+    def get_run_count_for_race(self) -> int:
+        return len(self.current_race_data["runs"])

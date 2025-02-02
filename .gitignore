@@ -2,8 +2,10 @@
 Archived/
 
 # Also not for you...
-Event Data/
+* Event Data/
 
+OBS-Studio*/
+*.lnk
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

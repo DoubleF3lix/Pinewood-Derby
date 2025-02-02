@@ -43,7 +43,11 @@ class ProgramData:
     # Allows the API to access the video player and OBS handler
     # The window manager is used to show the video player at appropriate times
     video_player_process: subprocess.Popen = None
-    obs_handler: OBSHandler = OBSHandler()
+    try:
+        obs_handler: OBSHandler = OBSHandler()
+    except ConnectionRefusedError:
+        print("OBS needs to be open with the WebSocket plugin enabled to run.")
+        sys.exit(0)
     window_manager: WindowManager = WindowManager()
 
     auto_handle_recording: bool = True
@@ -117,4 +121,4 @@ class ProgramData:
                 ProgramData.up_next = data["up_next"]
                 ProgramData.eliminated_racers = data["eliminated_racers"]
         except FileNotFoundError:
-            print("Tried to load ProgramData, but JSON file was found. Ignoring.")
+            print("Tried to load ProgramData, but JSON file was not found. Ignoring.")
